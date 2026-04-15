@@ -1,0 +1,876 @@
+<!DOCTYPE html>
+<html lang="vi" xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml"
+    xmlns:o="urn:schemas-microsoft-com:office:office">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="format-detection" content="telephone=no,date=no,address=no,email=no">
+
+    <!-- ============================================================
+         DARK MODE FIX — 3 layers of protection
+         1. meta color-scheme  → Apple Mail, iOS Mail, Samsung Mail
+         2. :root rule         → Gmail web (via AMP CSS scope)
+         3. @media dark + [data-ogsc] → Gmail app, Outlook mobile,
+            Yahoo Mail app, HEY, Fastmail
+    ============================================================ -->
+    <meta name="color-scheme" content="light only">
+    <meta name="supported-color-schemes" content="light">
+
+    <title>Thư Mời Tài Trợ – Tech Career: Stay Local or Go Global</title>
+    <!--[if mso]>
+<noscript><xml><o:OfficeDocumentSettings><o:PixelsPerInch>96</o:PixelsPerInch></o:OfficeDocumentSettings></xml></noscript>
+<![endif]-->
+
+    <style type="text/css">
+        /* ── Layer 2: force light scheme in web clients ─────────── */
+        :root {
+            color-scheme: light only;
+        }
+
+        /* ── Layer 3a: @media dark override ─────────────────────── */
+        @media (prefers-color-scheme: dark) {
+
+            /* Outer page background */
+            body,
+            .outer-bg,
+            table[bgcolor="#e8edf5"] {
+                background-color: #e8edf5 !important;
+            }
+
+            /* Main white body area */
+            .body-bg,
+            td[bgcolor="#ffffff"],
+            table[bgcolor="#ffffff"] {
+                background-color: #ffffff !important;
+            }
+
+            /* Dark navy sections — keep them dark (they're intentional) */
+            td[bgcolor="#0a1628"],
+            td[bgcolor="#0d2b6b"],
+            td[bgcolor="#1a4fa0"],
+            table[bgcolor="#0a1628"],
+            table[bgcolor="#0d2b6b"] {
+                background-color: inherit !important;
+            }
+
+            /* Stats cards */
+            .stat-dark-1 {
+                background-color: #0a1628 !important;
+            }
+
+            .stat-dark-2 {
+                background-color: #0d2b6b !important;
+            }
+
+            .stat-dark-3 {
+                background-color: #1a4fa0 !important;
+            }
+
+            /* Highlight box */
+            .highlight-box {
+                background-color: #f0f5ff !important;
+            }
+
+            /* Contact / closing box */
+            .contact-box {
+                background-color: #f0f5ff !important;
+            }
+
+            /* Body text — prevent auto-inversion to near-white */
+            .text-primary {
+                color: #1e293b !important;
+            }
+
+            .text-secondary {
+                color: #475569 !important;
+            }
+
+            .text-navy {
+                color: #0d2b6b !important;
+            }
+
+            .text-muted {
+                color: #94a3b8 !important;
+            }
+
+            .text-white {
+                color: #ffffff !important;
+            }
+
+            .text-white-dim {
+                color: rgba(255, 255, 255, 0.6) !important;
+            }
+
+            .text-white-dim2 {
+                color: rgba(240, 244, 255, 0.85) !important;
+            }
+
+            .text-gold {
+                color: #0a1628 !important;
+            }
+
+            /* Benefit cards border */
+            .benefit-card {
+                border-color: #dde3f0 !important;
+                background-color: #ffffff !important;
+            }
+
+            /* Divider lines */
+            .divider {
+                background-color: #e2e8f0 !important;
+            }
+
+            /* Gold bar */
+            .gold-bar {
+                background-color: #c9a84c !important;
+            }
+
+            /* Attachment + closing dark cards */
+            .dark-card {
+                background-color: #0d2b6b !important;
+            }
+
+            .gold-pill {
+                background-color: #c9a84c !important;
+            }
+
+            /* CTA Button */
+            .cta-btn {
+                background-color: #c9a84c !important;
+                color: #0a1628 !important;
+            }
+
+            /* Footer bg */
+            .footer-bg {
+                background-color: #0a1628 !important;
+            }
+        }
+
+        /* ── Layer 3b: Gmail app uses [data-ogsc] / [data-ogsb] ─── */
+        /* These override inline bgcolor attributes that Gmail rewrites */
+        [data-ogsc] .outer-bg,
+        [data-ogsb] .outer-bg {
+            background-color: #e8edf5 !important;
+        }
+
+        [data-ogsc] .body-bg,
+        [data-ogsb] .body-bg {
+            background-color: #ffffff !important;
+        }
+
+        [data-ogsc] .highlight-box,
+        [data-ogsb] .highlight-box {
+            background-color: #f0f5ff !important;
+        }
+
+        [data-ogsc] .contact-box,
+        [data-ogsb] .contact-box {
+            background-color: #f0f5ff !important;
+        }
+
+        [data-ogsc] .stat-dark-1,
+        [data-ogsb] .stat-dark-1 {
+            background-color: #0a1628 !important;
+        }
+
+        [data-ogsc] .stat-dark-2,
+        [data-ogsb] .stat-dark-2 {
+            background-color: #0d2b6b !important;
+        }
+
+        [data-ogsc] .stat-dark-3,
+        [data-ogsb] .stat-dark-3 {
+            background-color: #1a4fa0 !important;
+        }
+
+        [data-ogsc] .dark-card,
+        [data-ogsb] .dark-card {
+            background-color: #0d2b6b !important;
+        }
+
+        [data-ogsc] .footer-bg,
+        [data-ogsb] .footer-bg {
+            background-color: #0a1628 !important;
+        }
+
+        [data-ogsc] .text-primary,
+        [data-ogsb] .text-primary {
+            color: #1e293b !important;
+        }
+
+        [data-ogsc] .text-secondary,
+        [data-ogsb] .text-secondary {
+            color: #475569 !important;
+        }
+
+        [data-ogsc] .text-navy,
+        [data-ogsb] .text-navy {
+            color: #0d2b6b !important;
+        }
+
+        [data-ogsc] .text-white,
+        [data-ogsb] .text-white {
+            color: #ffffff !important;
+        }
+
+        [data-ogsc] .benefit-card,
+        [data-ogsb] .benefit-card {
+            background-color: #ffffff !important;
+            border-color: #dde3f0 !important;
+        }
+
+        [data-ogsc] .cta-btn,
+        [data-ogsb] .cta-btn {
+            background-color: #c9a84c !important;
+            color: #0a1628 !important;
+        }
+
+        /* ── Responsive breakpoints ──────────────────────────────── */
+        @media screen and (max-width:620px) {
+            .wrapper {
+                width: 100% !important;
+            }
+
+            .body-pad {
+                padding: 28px 20px !important;
+            }
+
+            .stat-col {
+                display: block !important;
+                width: 100% !important;
+                padding: 0 0 10px 0 !important;
+            }
+
+            .bene-col {
+                display: block !important;
+                width: 100% !important;
+                padding: 0 0 10px 0 !important;
+            }
+
+            .attach-btn {
+                display: block !important;
+                text-align: center !important;
+                margin-top: 14px !important;
+            }
+
+            .attach-info {
+                display: block !important;
+            }
+
+            .hide-mobile {
+                display: none !important;
+            }
+        }
+    </style>
+</head>
+
+<!-- ================================================================
+     NITC – Sponsorship Email Template (Mailchimp-ready)
+     Version : 1.0
+     Encoding: Table-based · Inl
+     ine CSS · No base64 images
+     Size    : ~14 KB (well under Mailchimp 102 KB limit)
+
+     HOW TO USE:
+     1. Upload your keyvisual image and replace the src in line ~70
+     2. Search "EDIT:" comments — they mark every field you need to fill
+     3. *|COMPANY|* is a Mailchimp default merge tag (Company field)
+        — make sure your contact list has a COMPANY column
+     4. Replace PASTE_YOUR_LINK_HERE with your Google Drive / PDF URL
+     5. Replace YOUR_EMAIL and YOUR_PHONE with real contact info
+     ================================================================ -->
+
+<body class="outer-bg"
+    style="margin:0;padding:0;background-color:#e8edf5;font-family:Arial,Helvetica,sans-serif;-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;">
+
+    <!-- PREHEADER -->
+    <div
+        style="display:none;font-size:1px;color:#e8edf5;line-height:1px;max-height:0;max-width:0;opacity:0;overflow:hidden;">
+        NITC mời hợp tác tài trợ chương trình Tech Career Talkshow 2026 – Stay Local or Go Global ✦
+    </div>
+
+    <!-- OUTER TABLE -->
+    <table width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#e8edf5" style="min-width:320px;">
+        <tr>
+            <td align="center" style="padding:24px 12px;">
+
+                <!-- EMAIL CONTAINER -->
+                <table class="wrapper" width="680" cellpadding="0" cellspacing="0" border="0"
+                    style="max-width:680px;width:100%;border-radius:12px;overflow:hidden;">
+
+                    <!-- TICKER BAR -->
+                    <tr>
+                        <td bgcolor="#0d2b6b" style="padding:9px 20px;border-radius:12px 12px 0 0;">
+                            <p class="text-white-dim" style="margin:0;color:rgba(255,255,255,0.7);font-size:10.5px;letter-spacing:2.5px;
+              text-transform:uppercase;font-family:Arial,sans-serif;text-align:center;line-height:1.4;">
+                                NITC &nbsp;✦&nbsp; NEU Information Technology Club &nbsp;✦&nbsp;
+                                Tech Career Talkshow 2026 &nbsp;✦&nbsp; Stay Local or Go Global &nbsp;✦&nbsp;
+                                Đại học Kinh tế Quốc dân
+                            </p>
+                        </td>
+                    </tr>
+
+                    <!-- KEYVISUAL IMAGE -->
+                    <tr>
+                        <td style="line-height:0;font-size:0;padding:0;">
+                            <img src="https://mcusercontent.com/d29ea9279c32c932dbf84c2a4/images/6a6c5a70-1a58-3e68-e86f-6b3e16b58c54.jpg"
+                                style="display:block;width:100%;max-width:680px;" alt="Tech Career Talkshow 2026">
+                        </td>
+                    </tr>
+
+                    <!-- GOLD SHIMMER BAR -->
+                    <tr>
+                        <td class="gold-bar" height="4" bgcolor="#c9a84c"
+                            style="font-size:0;line-height:0;mso-line-height-rule:exactly;">&nbsp;</td>
+                    </tr>
+
+                    <!-- SALUTATION ─────────────────────────────────────────────────
+         *|COMPANY|*  → Mailchimp default merge tag (Company field)
+         If your list uses a different field, update accordingly.
+         Fallback: *|COMPANY:Quý Doanh Nghiệp|*  (shows fallback text
+         when the field is empty)
+    ──────────────────────────────────────────────────────────────── -->
+
+                    <!-- MAIN BODY -->
+                    <tr>
+                        <td class="body-pad body-bg" bgcolor="#ffffff"
+                            style="padding:44px 52px;border-left:1px solid #dde3f0;border-right:1px solid #dde3f0;">
+
+                            <!-- SALUTATION -->
+                            <p class="text-primary" style="margin:0 0 6px 0;font-size:15.5px;line-height:1.7;
+              color:#1e293b;font-family:Arial,sans-serif;">
+                                Kính gửi: <strong class="text-navy" style="color:#0d2b6b;">{% if contact.COMPANY %}
+                                    {{ contact.COMPANY }}
+                                    {% else %}
+                                    Quý đơn vị
+                                    {% endif %}</strong>
+                            </p>
+
+                            <!-- EDIT: Replace [Tên của bạn] with sender's name -->
+
+                            <p class="text-primary" style="margin:0 0 26px 0;font-size:15px;line-height:1.8;
+              color:#1e293b;font-family:Arial,sans-serif;">
+                                Em là <strong class="text-navy" style="color:#0d2b6b;">[Tên của bạn]</strong>,
+                                đến từ <strong class="text-navy" style="color:#0d2b6b;">Câu lạc bộ Công nghệ Thông tin
+                                    Đại học Kinh tế Quốc dân – NITC trực thuộc LCĐ Khoa Công nghệ Thông tin, Đại học
+                                    Kinh tế Quốc dân</strong>.
+                            </p>
+
+                            <!-- DIVIDER -->
+                            <table width="100%" cellpadding="0" cellspacing="0" border="0" style="margin:0 0 24px 0;">
+                                <tr>
+                                    <td class="divider" height="1" bgcolor="#e2e8f0" style="font-size:0;line-height:0;">
+                                        &nbsp;</td>
+                                </tr>
+                            </table>
+
+                            <p class="text-secondary" style="margin:0 0 16px 0;font-size:14.5px;line-height:1.85;
+              color:#475569;font-family:Arial,sans-serif;">
+                                NITC (NEU Information Technology Club) là Câu lạc bộ đầu tiên và lâu đời nhất phát triển
+                                về công nghệ thông tin tại NEU.
+                            </p>
+                            <p class="text-secondary" style="margin:0 0 26px 0;font-size:14.5px;line-height:1.85;
+              color:#475569;font-family:Arial,sans-serif;">
+                                Với mục tiêu và định hướng phát triển kiến thức chuyên môn về lập trình, dữ liệu, AI,
+                                phát triển phần mềm, NITC mong muốn tạo môi trường học tập, thực hành và kết nối cho
+                                sinh viên Đại học Kinh tế Quốc dân nói riêng và các trường đại học trên địa bàn Hà Nội
+                                nói chung.
+                            </p>
+
+                            <!-- DIVIDER -->
+                            <table width="100%" cellpadding="0" cellspacing="0" border="0" style="margin:0 0 24px 0;">
+                                <tr>
+                                    <td class="divider" height="1" bgcolor="#e2e8f0" style="font-size:0;line-height:0;">
+                                        &nbsp;</td>
+                                </tr>
+                            </table>
+
+                            <p class="text-secondary" style="margin:0 0 16px 0;font-size:14.5px;line-height:1.85;
+              color:#475569;font-family:Arial,sans-serif;">
+                                Lời đầu tiên, thay mặt Ban tổ chức, em xin được gửi tới Quý
+                                Công ty lời chào và lời chúc sức khỏe trân trọng nhất!
+                                Chúc Quý Công ty ngày càng phát triển và thành công rực rỡ!
+                            </p>
+                            <p class="text-secondary" style="margin:0 0 26px 0;font-size:14.5px;line-height:1.85;
+              color:#475569;font-family:Arial,sans-serif;">
+                                Được biết Quý Công ty dành nhiều sự quan tâm tới các
+                                sự kiện sinh viên, các chương trình mang tính cộng đồng, em gửi email này với
+                                mong muốn nhận được sự hợp tác trong vai trò là
+                                <strong class="text-navy" style="color:#0d2b6b;">Nhà tài trợ</strong>
+                                cho chương trình lần này của Câu lạc bộ.
+                            </p>
+
+                            <!-- DIVIDER -->
+                            <table width="100%" cellpadding="0" cellspacing="0" border="0" style="margin:0 0 22px 0;">
+                                <tr>
+                                    <td class="divider" height="1" bgcolor="#e2e8f0" style="font-size:0;line-height:0;">
+                                        &nbsp;</td>
+                                </tr>
+                            </table>
+
+                            <!-- HIGHLIGHT BOX: About the Program -->
+                            <table width="100%" cellpadding="0" cellspacing="0" border="0" style="margin:0 0 22px 0;">
+                                <tr>
+                                    <td class="highlight-box" bgcolor="#f0f5ff"
+                                        style="border-left:4px solid #1a4fa0;border-radius:0 8px 8px 0;padding:20px 24px;">
+                                        <p class="text-navy" style="margin:0 0 10px 0;font-size:15.5px;font-weight:bold;
+                  color:#0d2b6b;font-family:Arial,sans-serif;">✦ Về Chương Trình</p>
+                                        <p class="text-secondary"
+                                            style="margin:0;font-size:14px;line-height:1.75;color:#475569;font-family:Arial,sans-serif;">
+                                            Chương trình sắp tới diễn ra vào <strong>05/05/2026</strong>,
+                                            với chủ đề <strong>"Tech Career: Stay Local or Go Global"</strong> —
+                                            hướng đến cộng đồng sinh viên công nghệ năng động của NEU.
+                                        </p>
+                                    </td>
+                                </tr>
+                            </table>
+
+                            <!-- STATS ROW -->
+                            <table width="100%" cellpadding="0" cellspacing="0" border="0" style="margin:0 0 22px 0;">
+                                <tr valign="top">
+
+                                    <td class="stat-col" width="33%" style="padding-right:8px;">
+                                        <table width="100%" cellpadding="0" cellspacing="0" border="0">
+                                            <tr>
+                                                <td class="stat-dark-1" bgcolor="#0a1628"
+                                                    style="border-radius:10px;padding:20px 14px;text-align:center;">
+                                                    <p class="text-white" style="margin:0 0 5px 0;font-size:26px;font-weight:bold;
+                    color:#ffffff;font-family:Georgia,'Times New Roman',serif;">550</p>
+                                                    <p class="text-white-dim" style="margin:0;font-size:10px;color:rgba(255,255,255,0.6);
+                    letter-spacing:1px;text-transform:uppercase;font-family:Arial,sans-serif;">
+                                                        Người tham gia
+                                                    </p>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </td>
+
+                                    <td class="stat-col" width="33%" style="padding:0 4px;">
+                                        <table width="100%" cellpadding="0" cellspacing="0" border="0">
+                                            <tr>
+                                                <td class="stat-dark-2" bgcolor="#0d2b6b"
+                                                    style="border-radius:10px;padding:20px 14px;text-align:center;">
+                                                    <p class="text-white" style="margin:0 0 5px 0;font-size:26px;font-weight:bold;
+                    color:#ffffff;font-family:Georgia,'Times New Roman',serif;">[…]</p>
+                                                    <p class="text-white-dim" style="margin:0;font-size:10px;color:rgba(255,255,255,0.6);
+                    letter-spacing:1px;text-transform:uppercase;font-family:Arial,sans-serif;">
+                                                        Lượt tiếp cận
+                                                    </p>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </td>
+
+                                    <td class="stat-col" width="33%" style="padding-left:8px;">
+                                        <table width="100%" cellpadding="0" cellspacing="0" border="0">
+                                            <tr>
+                                                <td class="stat-dark-3" bgcolor="#1a4fa0"
+                                                    style="border-radius:10px;padding:20px 14px;text-align:center;">
+                                                    <p class="text-white" style="margin:0 0 5px 0;font-size:22px;font-weight:bold;
+                    color:#ffffff;font-family:Georgia,'Times New Roman',serif;">T5/2026</p>
+                                                    <p class="text-white-dim" style="margin:0;font-size:10px;color:rgba(255,255,255,0.6);
+                    letter-spacing:1px;text-transform:uppercase;font-family:Arial,sans-serif;">
+                                                        Thời gian tổ chức
+                                                    </p>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </td>
+
+                                </tr>
+                            </table>
+
+                            <!-- DIVIDER -->
+                            <table width="100%" cellpadding="0" cellspacing="0" border="0" style="margin:0 0 20px 0;">
+                                <tr>
+                                    <td class="divider" height="1" bgcolor="#e2e8f0" style="font-size:0;line-height:0;">
+                                        &nbsp;</td>
+                                </tr>
+                            </table>
+
+                            <!-- SECTION: Goals -->
+                            <table width="100%" cellpadding="0" cellspacing="0" border="0" style="margin:0 0 14px 0;">
+                                <tr valign="middle">
+                                    <td class="gold-bar" width="4" bgcolor="#c9a84c"
+                                        style="border-radius:2px;line-height:22px;">&nbsp;</td>
+                                    <td width="12">&nbsp;</td>
+                                    <td>
+                                        <p class="text-navy" style="margin:0;font-size:17px;font-weight:bold;color:#0d2b6b;
+                    font-family:Georgia,'Times New Roman',serif;">Mục Tiêu Chương Trình</p>
+                                    </td>
+                                </tr>
+                            </table>
+
+                            <!-- Goal 1 -->
+                            <table width="100%" cellpadding="0" cellspacing="0" border="0" style="margin-bottom:10px;">
+                                <tr valign="top">
+                                    <td width="28">
+                                        <table cellpadding="0" cellspacing="0" border="0">
+                                            <tr>
+                                                <td class="stat-dark-3" width="26" height="26" bgcolor="#1a4fa0" style="border-radius:50%;text-align:center;color:#fff;font-size:12px;
+                       font-weight:bold;font-family:Arial,sans-serif;line-height:26px;">1</td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                    <td style="padding-left:12px;padding-top:2px;">
+                                        <p class="text-primary"
+                                            style="margin:0;font-size:14.5px;line-height:1.75;color:#1e293b;font-family:Arial,sans-serif;">
+                                            Giúp sinh viên hiểu rõ xu hướng phát triển nghề nghiệp trong thời đại hội
+                                            nhập.
+                                        </p>
+                                    </td>
+                                </tr>
+                            </table>
+
+                            <!-- Goal 2 -->
+                            <table width="100%" cellpadding="0" cellspacing="0" border="0" style="margin-bottom:10px;">
+                                <tr valign="top">
+                                    <td width="28">
+                                        <table cellpadding="0" cellspacing="0" border="0">
+                                            <tr>
+                                                <td class="stat-dark-3" width="26" height="26" bgcolor="#1a4fa0" style="border-radius:50%;text-align:center;color:#fff;font-size:12px;
+                       font-weight:bold;font-family:Arial,sans-serif;line-height:26px;">2</td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                    <td style="padding-left:12px;padding-top:2px;">
+                                        <p class="text-primary"
+                                            style="margin:0;font-size:14.5px;line-height:1.75;color:#1e293b;font-family:Arial,sans-serif;">
+                                            Định hướng lựa chọn giữa làm việc tại thị trường quốc tế
+                                            <em>(go global)</em> và phát triển trong nước <em>(stay local)</em>.
+                                        </p>
+                                    </td>
+                                </tr>
+                            </table>
+
+                            <!-- Goal 3 -->
+                            <table width="100%" cellpadding="0" cellspacing="0" border="0" style="margin-bottom:22px;">
+                                <tr valign="top">
+                                    <td width="28">
+                                        <table cellpadding="0" cellspacing="0" border="0">
+                                            <tr>
+                                                <td class="stat-dark-3" width="26" height="26" bgcolor="#1a4fa0" style="border-radius:50%;text-align:center;color:#fff;font-size:12px;
+                       font-weight:bold;font-family:Arial,sans-serif;line-height:26px;">3</td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                    <td style="padding-left:12px;padding-top:2px;">
+                                        <p class="text-primary"
+                                            style="margin:0;font-size:14.5px;line-height:1.75;color:#1e293b;font-family:Arial,sans-serif;">
+                                            Mang đến các góc nhìn thực tế từ chuyên gia, doanh nghiệp và những người
+                                            trẻ có kinh nghiệm phong phú.
+                                        </p>
+                                    </td>
+                                </tr>
+                            </table>
+
+                            <!-- DIVIDER -->
+                            <table width="100%" cellpadding="0" cellspacing="0" border="0" style="margin:0 0 20px 0;">
+                                <tr>
+                                    <td class="divider" height="1" bgcolor="#e2e8f0" style="font-size:0;line-height:0;">
+                                        &nbsp;</td>
+                                </tr>
+                            </table>
+
+                            <!-- SECTION: Sponsor Benefits -->
+                            <table width="100%" cellpadding="0" cellspacing="0" border="0" style="margin:0 0 10px 0;">
+                                <tr valign="middle">
+                                    <td class="gold-bar" width="4" bgcolor="#c9a84c"
+                                        style="border-radius:2px;line-height:22px;">&nbsp;</td>
+                                    <td width="12">&nbsp;</td>
+                                    <td>
+                                        <p class="text-navy" style="margin:0;font-size:17px;font-weight:bold;color:#0d2b6b;
+                    font-family:Georgia,'Times New Roman',serif;">Quyền Lợi Nhà Tài Trợ</p>
+                                    </td>
+                                </tr>
+                            </table>
+                            <p class="text-secondary"
+                                style="margin:0 0 14px 0;font-size:14px;color:#475569;font-family:Arial,sans-serif;">
+                                Tham gia sự kiện lần này, Quý Công ty/Doanh Nghiệp/Trung tâm sẽ có cơ hội:
+                            </p>
+
+                            <!-- Benefits grid row 1 -->
+                            <table width="100%" cellpadding="0" cellspacing="0" border="0" style="margin-bottom:10px;">
+                                <tr valign="top">
+                                    <td class="bene-col" width="50%" style="padding-right:6px;">
+                                        <table width="100%" cellpadding="0" cellspacing="0" border="0">
+                                            <tr>
+                                                <td class="benefit-card body-bg"
+                                                    style="border:1px solid #dde3f0;border-radius:10px;padding:16px 14px;background-color:#ffffff;">
+                                                    <p style="margin:0 0 8px 0;font-size:16px;line-height:1;">📣</p>
+                                                    <p class="text-secondary"
+                                                        style="margin:0;font-size:13px;color:#475569;line-height:1.65;font-family:Arial,sans-serif;">
+                                                        Quảng bá hình ảnh và thương hiệu đến cộng đồng sinh viên năng
+                                                        động
+                                                    </p>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                    <td class="bene-col" width="50%" style="padding-left:6px;">
+                                        <table width="100%" cellpadding="0" cellspacing="0" border="0">
+                                            <tr>
+                                                <td class="benefit-card body-bg"
+                                                    style="border:1px solid #dde3f0;border-radius:10px;padding:16px 14px;background-color:#ffffff;">
+                                                    <p style="margin:0 0 8px 0;font-size:16px;line-height:1;">🎯</p>
+                                                    <p class="text-secondary"
+                                                        style="margin:0;font-size:13px;color:#475569;line-height:1.65;font-family:Arial,sans-serif;">
+                                                        Tiếp cận nguồn nhân lực trẻ, chất lượng cao tiềm năng
+                                                    </p>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                            </table>
+
+                            <!-- Benefits grid row 2 -->
+                            <table width="100%" cellpadding="0" cellspacing="0" border="0" style="margin-bottom:22px;">
+                                <tr valign="top">
+                                    <td class="bene-col" width="50%" style="padding-right:6px;">
+                                        <table width="100%" cellpadding="0" cellspacing="0" border="0">
+                                            <tr>
+                                                <td class="benefit-card body-bg"
+                                                    style="border:1px solid #dde3f0;border-radius:10px;padding:16px 14px;background-color:#ffffff;">
+                                                    <p style="margin:0 0 8px 0;font-size:16px;line-height:1;">📲</p>
+                                                    <p class="text-secondary"
+                                                        style="margin:0;font-size:13px;color:#475569;line-height:1.65;font-family:Arial,sans-serif;">
+                                                        Gia tăng độ nhận diện qua các phương tiện truyền thông của
+                                                        chương trình
+                                                    </p>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                    <td class="bene-col" width="50%" style="padding-left:6px;">
+                                        <table width="100%" cellpadding="0" cellspacing="0" border="0">
+                                            <tr>
+                                                <td class="benefit-card body-bg"
+                                                    style="border:1px solid #dde3f0;border-radius:10px;padding:16px 14px;background-color:#ffffff;">
+                                                    <p style="margin:0 0 8px 0;font-size:16px;line-height:1;">🤝</p>
+                                                    <p class="text-secondary"
+                                                        style="margin:0;font-size:13px;color:#475569;line-height:1.65;font-family:Arial,sans-serif;">
+                                                        Cơ hội kết nối trực tiếp với sinh viên tài năng và xây dựng
+                                                        mối quan hệ hợp tác lâu dài
+                                                    </p>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                            </table>
+
+                            <!-- DIVIDER -->
+                            <table width="100%" cellpadding="0" cellspacing="0" border="0" style="margin:0 0 22px 0;">
+                                <tr>
+                                    <td class="divider" height="1" bgcolor="#e2e8f0" style="font-size:0;line-height:0;">
+                                        &nbsp;</td>
+                                </tr>
+                            </table>
+
+                            <!-- ATTACHMENT CARD -->
+                            <table width="100%" cellpadding="0" cellspacing="0" border="0" style="margin-bottom:22px;">
+                                <tr>
+                                    <td class="dark-card" bgcolor="#0d2b6b" style="border-radius:14px;padding:22px 24px;
+                 border:1px solid rgba(96,165,250,0.18);">
+                                        <table width="100%" cellpadding="0" cellspacing="0" border="0">
+                                            <tr valign="middle">
+                                                <td width="52" class="hide-mobile">
+                                                    <table cellpadding="0" cellspacing="0" border="0">
+                                                        <tr>
+                                                            <td width="52" height="52" bgcolor="rgba(255,255,255,0.1)"
+                                                                style="border-radius:12px;border:1.5px solid rgba(255,255,255,0.2);
+                           text-align:center;font-size:20px;line-height:52px;">📄</td>
+                                                        </tr>
+                                                    </table>
+                                                </td>
+                                                <td class="attach-info" style="padding:0 16px;">
+                                                    <p class="text-white" style="margin:0 0 4px 0;font-size:15px;font-weight:bold;
+                      color:#ffffff;font-family:Arial,sans-serif;">
+                                                        📎 Hồ Sơ Tài Trợ Đính Kèm
+                                                    </p>
+                                                    <p class="text-white-dim"
+                                                        style="margin:0;font-size:12px;color:rgba(255,255,255,0.55);font-family:Arial,sans-serif;">
+                                                        Kế hoạch tổ chức · Nội dung chương trình · Quyền lợi Nhà tài trợ
+                                                    </p>
+                                                </td>
+                                                <td class="attach-btn" align="right" nowrap="nowrap">
+                                                    <a href="https://drive.google.com/file/d/1xgdJSk6Ky5x-J2X5W3BNFimd6zAqKT0S/view?usp=sharing"
+                                                        target="_blank" class="cta-btn" style="display:inline-block;background-color:#c9a84c;color:#0a1628;
+                      font-family:Arial,sans-serif;font-size:13px;font-weight:bold;
+                      padding:11px 22px;border-radius:8px;text-decoration:none;
+                      letter-spacing:0.5px;white-space:nowrap;
+                      mso-padding-alt:11px 22px;">
+                                                        Xem Hồ Sơ ↗
+                                                    </a>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                            </table>
+
+                            <!-- CLOSING BOX -->
+                            <table width="100%" cellpadding="0" cellspacing="0" border="0" style="margin-bottom:22px;">
+                                <tr>
+                                    <td class="dark-card" bgcolor="#0d2b6b"
+                                        style="border-radius:12px;padding:32px 36px;">
+                                        <p class="text-white-dim2" style="margin:0 0 18px 0;font-size:14px;line-height:1.8;
+                  color:rgba(240,244,255,0.85);font-family:Arial,sans-serif;text-align:center;">
+                                            Chúng em rất mong nhận được sự đồng hành từ Quý đơn vị
+                                            với tư cách là nhà tài trợ. Mong Quý đơn vị hỗ trợ phản hồi sớm để
+                                            Câu lạc bộ có thể chuẩn bị tốt hơn cho yêu cầu (nếu có) từ phía Doanh
+                                            nghiệp.
+                                        </p>
+                                        <table cellpadding="0" cellspacing="0" border="0" align="center">
+                                            <tr>
+                                                <td class="gold-pill" bgcolor="#c9a84c"
+                                                    style="border-radius:20px;padding:9px 26px;">
+                                                    <p class="text-gold" style="margin:0;font-size:13px;font-weight:bold;color:#0a1628;
+                    font-family:Arial,sans-serif;letter-spacing:0.8px;">
+                                                        ⏳ Phản hồi trước ngày: …/…/2026
+                                                    </p>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                            </table>
+                            <!-- EDIT: Replace with your actual phản hồi trước ngày... ở trên -->
+
+                            <!-- EDIT: Replace with your actual email address and phone number -->
+
+
+                            <!-- CONTACT INFO -->
+                            <table width="100%" cellpadding="0" cellspacing="0" border="0" style="margin-bottom:32px;">
+                                <tr>
+                                    <td class="contact-box highlight-box" bgcolor="#f0f5ff"
+                                        style="border-radius:8px;padding:18px 22px;border-left:4px solid #c9a84c;">
+                                        <p class="text-navy" style="margin:0 0 10px 0;font-size:14px;font-weight:bold;
+                  color:#0d2b6b;font-family:Arial,sans-serif;">Nếu Quý Đơn vị cần biết thêm thông tin chi tiết, xin
+                                            liên hệ với em qua Thông Tin Liên Hệ 📬</p>
+
+                                        <table cellpadding="0" cellspacing="0" border="0" style="margin-bottom:6px;">
+                                            <tr valign="middle">
+                                                <td class="text-primary"
+                                                    style="font-size:13.5px;color:#1e293b;font-family:Arial,sans-serif;">
+                                                    📧&nbsp;<strong>Email:</strong>&nbsp;
+                                                </td>
+                                                <td>
+                                                    <a href="mailto:YOUR_EMAIL@neu.edu.vn" style="color:#1a4fa0;text-decoration:none;font-size:13.5px;
+                      font-family:Arial,sans-serif;">
+                                                        YOUR_EMAIL@neu.edu.vn
+                                                    </a>
+                                                </td>
+                                            </tr>
+                                        </table>
+
+                                        <table cellpadding="0" cellspacing="0" border="0">
+                                            <tr valign="middle">
+                                                <td class="text-primary"
+                                                    style="font-size:13.5px;color:#1e293b;font-family:Arial,sans-serif;">
+                                                    📞&nbsp;<strong>Điện thoại:</strong>&nbsp;
+                                                </td>
+                                                <td>
+                                                    <a href="tel:+840XXXXXXXXX" style="color:#1a4fa0;text-decoration:none;font-size:13.5px;
+                      font-family:Arial,sans-serif;">
+                                                        0XXX XXX XXX
+                                                    </a>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                            </table>
+
+                            <!-- ── SIGNATURE ─────────────────────────────────────────────────
+         EDIT: Replace [Tên của bạn] and [Chức vụ] with real info
+    ──────────────────────────────────────────────────────────────── -->
+
+
+                            <!-- SIGNATURE -->
+                            <p class="text-secondary"
+                                style="margin:0 0 2px 0;font-size:14px;color:#475569;font-family:Arial,sans-serif;">
+                                Trân trọng,
+                            </p>
+                            <p class="text-navy" style="margin:8px 0 2px 0;font-size:15.5px;font-weight:bold;
+              color:#0d2b6b;font-family:Arial,sans-serif;">
+                                [Tên của bạn]
+                            </p>
+                            <p class="text-secondary"
+                                style="margin:0 0 2px 0;font-size:14px;color:#475569;font-family:Arial,sans-serif;">
+                                Ban Tổ chức Talkshow ·
+                                <strong class="text-navy" style="color:#0d2b6b;">NITC – NEU IT Club</strong>
+                            </p>
+                            <p class="text-muted"
+                                style="margin:0;font-size:12.5px;color:#94a3b8;font-family:Arial,sans-serif;">
+                                CLB Công Nghệ Thông Tin · Đại học Kinh Tế Quốc Dân
+                            </p>
+
+                        </td>
+                    </tr>
+
+                    <!-- FOOTER -->
+                    <tr>
+                        <td class="footer-bg" bgcolor="#0a1628"
+                            style="padding:28px 48px;text-align:center;border-radius:0 0 12px 12px;">
+                            <p class="text-white" style="margin:0 0 3px 0;font-size:20px;font-weight:bold;color:#ffffff;
+              letter-spacing:3px;font-family:Georgia,'Times New Roman',serif;">
+                                NITC
+                            </p>
+                            <p style="margin:0 0 16px 0;font-size:10.5px;color:rgba(255,255,255,0.4);
+              letter-spacing:2px;text-transform:uppercase;font-family:Arial,sans-serif;">
+                                NEU Information Technology Club
+                            </p>
+
+                            <table width="100%" cellpadding="0" cellspacing="0" border="0" style="margin-bottom:16px;">
+                                <tr>
+                                    <td height="1" bgcolor="rgba(255,255,255,0.08)" style="font-size:0;line-height:0;">
+                                        &nbsp;</td>
+                                </tr>
+                            </table>
+
+                            <p
+                                style="margin:0 0 12px 0;font-size:12px;color:rgba(255,255,255,0.45);font-family:Arial,sans-serif;">
+                                CLB Công Nghệ Thông Tin · Đại học Kinh Tế Quốc Dân · Hà Nội, Việt Nam
+                            </p>
+
+                            <p
+                                style="margin:0;font-size:11px;color:rgba(255,255,255,0.25);font-family:Arial,sans-serif;">
+                                Bạn nhận email này vì địa chỉ <em>*|EMAIL|*</em> có trong danh sách liên hệ của NITC.
+                                &nbsp;|&nbsp;
+                                <a href="*|UNSUB|*"
+                                    style="color:rgba(255,255,255,0.25);text-decoration:underline;font-family:Arial,sans-serif;">
+                                    Hủy nhận email
+                                </a>
+                            </p>
+                        </td>
+                    </tr>
+
+                </table>
+                <!-- END EMAIL CONTAINER -->
+
+            </td>
+        </tr>
+    </table>
+    <!-- END OUTER TABLE -->
+    <br>
+    <p style="color: #666; font-family: Arial, sans-serif; font-size: 14px; line-height: 1.6;">
+        -- <br>
+        <strong style="color: #0d2b6b;">Hoàng Thanh Tú (Ms.)</strong><br>
+        Member of External Relation Department - <strong>NITC</strong><br>
+        Mobile: (+84) 983401618 | Email: tuhoang.nitc@gmail.com
+    </p>
+    <hr style="border: none; border-top: 1px solid #ddd; margin: 15px 0;">
+    <p style="color: #666; font-family: Arial, sans-serif; font-size: 13px;">
+        <strong>Ban Đối ngoại</strong><br>
+        CLB Công nghệ thông tin Đại học Kinh tế Quốc dân - NITC<br>
+        Address: National Economics University, 207 Giai Phong Road, Hanoi<br>
+        Email: nitc.neu@gmail.com | Fanpage: <a href="https://www.facebook.com/NITC.NEU"
+            style="color: #0d2b6b;">fb.com/NITC.NEU</a>
+    </p>
+</body>
+
+</html>
